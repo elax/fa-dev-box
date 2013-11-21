@@ -1,6 +1,9 @@
 .DEFAULT_GOAL:=up
 SHELL= /bin/sh
-.done/extract:
+.done/init_submodule:
+	git submodule update --init
+
+.done/extract: .done/init_submodule
 	scripts/extract.sh
 	-touch $@
 
