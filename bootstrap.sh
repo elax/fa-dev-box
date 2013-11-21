@@ -16,3 +16,5 @@ apt-get install -y php5-mysql
 rm -rf /var/www
 ln -s /vagrant-www/fa /var/www
 
+service apache2 restart
+
