@@ -1,3 +1,6 @@
 [submodule "fa"]
 	path = fa
 	url = https://github.com/elax/frontaccounting.git
+[submodule "private"]
+	path = private
+	url = https://github.com/elax/fa-dev-private.git
