@@ -32,8 +32,8 @@ down:
 %: %.gz
 	gunzip $< > $@
 
-.done/bootstrap_db:  dumps/bootstrap.sql
-	$(call, exec_in_box, mysql -uroot fa < dumps/bootstrap.sql)
+.done/bootstrap_db:  private/dumps/bootstrap.sql
+	$(call, exec_in_box, mysql -uroot fa < private/dumps/bootstrap.sql)
 	-touch $@
 
 bootstrap_db: .done/bootstrap_db
@@ -50,9 +50,9 @@ exec_in_box = $(1)
 endif
 
 backup_db:
-	$(call exec_in_box, mysqldump -uroot --add-drop-table --dump-date --opt --skip-extended fa > dumps/db.sql)
+	$(call exec_in_box, mysqldump -uroot --add-drop-table --dump-date --opt --skip-extended fa > private/dumps/db.sql)
 
 
 restore_db:
-	i$(call exec_in_box, mysql -uroot  fa <  dumps/db.sql)
+	i$(call exec_in_box, mysql -uroot  fa <  private/dumps/db.sql)
 
