@@ -26,6 +26,18 @@ SUBMODULES
 *fa-box-dev* is a git meta-project, using submodules (see `git submodule`) to separate the FA source code from private data.
 One of the benefit of using submodules is it keep the `fa` subdirectory separate from the *fa-box_dev* so you can develop inside it as normal and pull and push to your favorite git repository. It also prevent you to pushing my mistake private data to a public repo. As long as your *fa-box-private* is private, even if you push your version of *fa-box-dev* using private data on a public repo, nobody would be able to access those private data as they are not part of *fa-box-dev* but only leaves inside your private repository.
 
+CONVENTIONS
+===========
+In order to make this project easier to write, we prefer conventions over 
+configuration. As everything is in a box there is no real security problem,
+so please use the following credentials when creating your first Company:
+
+* Database: fa
+* db_root : root
+* db_pass : 
+* Admin   : admin
+* password: password
+
 DISCLAIMER
 ==========
 This project is a work in progress, so be indulgent  and any help to make it better will be welcome.
