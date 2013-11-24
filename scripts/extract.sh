@@ -29,14 +29,14 @@ do
 		# We do it first, when the file is still there
 		if [ -d $file ] ; then
 			# for a dir we need to hide n
-			# find $file -exec git update-index --assume-unchanged {} \;
+			find $file -exec git update-index --assume-unchanged {} \;
 			find $file -exec echo {} >> $FA_GIT/info/exclude \;
 			# we can't *assume unchanged* a directory so we have to ignore it
 			
 			#echo $file >> $FA_GIT/info/exclude
 		else
 			echo $file >> $FA_GIT/info/exclude
-			#git update-index --assume-unchanged $file
+			git update-index --assume-unchanged $file
 		fi
 
 		if ! grep $file $FA_GIT/info/exclude ; then
