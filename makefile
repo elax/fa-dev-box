@@ -54,5 +54,5 @@ backup_db:
 
 
 restore_db:
-	i$(call exec_in_box, mysql -uroot  fa <  private/dumps/db.sql)
+	$(call exec_in_box, mysql -uroot  fa <  private/dumps/db.sql)
 
