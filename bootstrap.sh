@@ -18,3 +18,5 @@ ln -s /vagrant-www/fa /var/www
 
 service apache2 restart
 
+apt-get install -y curl
+apt-get install -y git

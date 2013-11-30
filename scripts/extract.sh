@@ -20,7 +20,7 @@
 pushd fa
 FA_GIT='../.git/modules/fa'
 
-for file in company config.php config_db.php installed_extensions.php tmp lang modules
+for file in company config.php config_db.php installed_extensions.php tmp lang modules vendor bin
 do
 	# Check if the link alread exists in FA directory
 	# or if the file needs to be moved and linked

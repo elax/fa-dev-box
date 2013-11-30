@@ -56,3 +56,18 @@ backup_db:
 restore_db:
 	$(call exec_in_box, mysql -uroot  fa <  private/dumps/db.sql)
 
+composer.phar:
+	$(call exec_in_box, wget -nc http://getcomposer.org/composer.phar)
+
+.done/composer_init: composer.phar
+	$(call exec_in_box, cd fa; php ../composer.phar install)
+	touch $@
+
+composer_udate: .done/composer_init
+	$(call exec_in_box, cd fa; php ../composer.phar update)
+
+behat_init:
+	$(call exec_in_box, cd fa; bin/behat --init)
+
+behat:
+	$(call exec_in_box, cd fa; bin/behat)
