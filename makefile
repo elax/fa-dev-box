@@ -63,7 +63,7 @@ composer.phar:
 	$(call exec_in_box, cd fa; php ../composer.phar install)
 	touch $@
 
-composer_udate: .done/composer_init
+composer_update: .done/composer_init
 	$(call exec_in_box, cd fa; php ../composer.phar update)
 
 behat_init:

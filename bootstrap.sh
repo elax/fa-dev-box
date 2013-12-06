@@ -20,3 +20,11 @@ service apache2 restart
 
 apt-get install -y curl
 apt-get install -y git
+
+# Zombie JS 
+apt-get intall -y build-essential # get gcc
+apt-get install -y node
+apt-get install -y npm
+npm install -g zombie@2.0.0-alpha1
+
+
